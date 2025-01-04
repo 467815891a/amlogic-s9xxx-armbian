@@ -342,10 +342,6 @@ check_data() {
         tags_list[${key}]="${unique_values[@]}"
     done
 
-    if [[ -n "${kernel_usage}" && "${kernel_usage}" == "rk35xx" ]]; then
-        tags_list[${kernel_usage}]="5.10.y"
-    fi
-
     # Check the kernel tags list
     [[ "${#tags_list[@]}" -eq 0 ]] && error_msg "The [ tags_list ] is missing, stop building."
     echo -e "${INFO} The kernel tags list: [ ${!tags_list[@]} ]"
