@@ -366,3 +366,4 @@ jobs:
             - Update command: armbian-update
             ### Armbian Image Verification
             - sha256sum
+            - sha256sum
