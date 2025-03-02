@@ -216,7 +216,6 @@ on:
           - dev
           - beta
           - rk35xx
-          - rk3588
       armbian_fstype:
         description: "Select armbian rootfs type."
         required: false
