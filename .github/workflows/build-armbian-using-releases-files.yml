@@ -228,6 +228,7 @@ on:
           - flippy
           - dev
           - beta
+          - rk35xx
       armbian_fstype:
         description: "Select armbian rootfs type."
         required: false
@@ -329,7 +330,7 @@ jobs:
           armbian_buildpath="build/output/images"
           [[ -d "${armbian_buildpath}" ]] || mkdir -p "${armbian_buildpath}"
           ln -sf /builder/build ${{ github.workspace }}/build
-          ln -sf /builder/build /home/runner/work/_actions/ophub/amlogic-s9xxx-armbian/main/build
+          ln -sf /builder/build /home/runner/work/_actions/467815891a/amlogic-s9xxx-armbian/main/build
 
           latest_version=$(curl -s \
                 -H "Accept: application/vnd.github+json" \
@@ -357,7 +358,7 @@ jobs:
           echo "status=success" >> ${GITHUB_OUTPUT}
 
       - name: Rebuild Armbian [ ${{ inputs.set_release }} ]
-        uses: ophub/amlogic-s9xxx-armbian@main
+        uses: 467815891a/amlogic-s9xxx-armbian@main
         if: ${{ steps.down.outputs.status }} == 'success' && !cancelled()
         with:
           build_target: armbian
